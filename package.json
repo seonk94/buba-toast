@@ -1,0 +1,19 @@
+{
+  "name": "buba-toast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seonk94/buba-toast.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seonk94/buba-toast/issues"
+  },
+  "homepage": "https://github.com/seonk94/buba-toast#readme"
+}
