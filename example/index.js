@@ -1,4 +1,4 @@
-import Toast from "./toast";
+import Toast from "../lib/toast";
 
 document.addEventListener("DOMContentLoaded", () => {
     const toast = new Toast();
