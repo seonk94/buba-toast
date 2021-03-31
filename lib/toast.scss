@@ -2,11 +2,11 @@
 #toast-container {
     position: fixed;
     z-index: 999;
-    top: 80px;
+    top: 24px;
     bottom: auto;
     right: 24px;
     left: auto;
-    width: 200px;
+    min-width: 200px;
 
     #notification {
         padding: 16px;
@@ -15,7 +15,7 @@
         display: flex;
         align-items: center;
         background: #e5e5e5;
-        color: #000;
+        color: #fff;
         &.success {
             background-color: #68B8C8;
         }
