@@ -2,9 +2,15 @@
   "name": "buba-toast",
   "version": "1.0.4",
   "description": "simple toast",
-  "main": "dist/toast.js",
+  "source": "lib/toast.js",         
+  "main": "dist/main.js",
+  "exports": "./dist/toast.modern.js",
+  "module": "dist/toast.module.js", 
+  "unpkg": "dist/toast.umd.js",     
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "micro-build": "microbundle",        
     "build": "webpack",
     "dev": "webpack serve"
   },
