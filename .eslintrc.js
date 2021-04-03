@@ -1,15 +1,21 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true
-  },
-  extends: [
-    'standard'
-  ],
+  root: true,
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module'
+    ecmaVersion: 2019,
+    sourceType: 'module',
   },
-  rules: {},
-  ignorePatterns: ['dist/**/*.js']
-}
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'plugin:@typescript-eslint/recommended'
+  ],
+  env: {
+    browser: true
+  },
+  rules: {
+    indent: ['error', 2],
+    semi: ['error', 'always'],
+    '@typescript-eslint/no-var-requires': "off",
+    '@typescript-eslint/explicit-module-boundary-types': "off"
+  }
+};

@@ -2,14 +2,14 @@
   "name": "buba-toast",
   "version": "1.0.5",
   "description": "simple toast",
-  "source": "lib/toast.js",
+  "source": "lib/toast.ts",
   "main": "dist/main.js",
   "exports": "./dist/toast.modern.js",
   "module": "dist/toast.module.js",
   "unpkg": "dist/toast.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "micro-build": "microbundle",
+    "micro": "microbundle",
     "build": "webpack",
     "dev": "webpack serve"
   },
@@ -27,19 +27,29 @@
   },
   "homepage": "https://github.com/seonk94/buba-toast#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
     "@webpack-cli/serve": "^1.3.0",
     "css-loader": "^5.2.0",
     "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-promise": "^4.3.1",
     "html-webpack-plugin": "^5.3.1",
+    "microbundle": "^0.13.0",
     "node-sass": "^5.0.0",
+    "prettier": "^2.2.1",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
+    "typescript": "^4.2.3",
     "webpack": "^5.28.0",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "ts-loader": "^8.1.0"
   }
 }
