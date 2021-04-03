@@ -9,9 +9,8 @@
   "unpkg": "dist/toast.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "micro": "microbundle",
-    "build": "webpack",
-    "dev": "webpack serve"
+    "build": "microbundle --name bubaToast",
+    "dev": "microbundle watch --name bubaToast"
   },
   "repository": {
     "type": "git",

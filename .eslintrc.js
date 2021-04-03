@@ -17,5 +17,6 @@ module.exports = {
     semi: ['error', 'always'],
     '@typescript-eslint/no-var-requires': "off",
     '@typescript-eslint/explicit-module-boundary-types': "off"
-  }
+  },
+  ignorePatterns: ["dist/**/*.js"],
 };

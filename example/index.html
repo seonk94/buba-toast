@@ -3,18 +3,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../dist/main.css">
     <title>Document</title>
 </head>
 <body>
-    <button id="success">success</button>
-
+    <script src="../dist/main.umd.js"></script>
     <script>
-        const toast = new Toast()
-        const success = document.getElementById('success')
-
-        success.addEventListener("click", () => {
-            toast.success("success")
-        })
+        bubaToast("success")
+        bubaToast("warn", "warn")
+        bubaToast("info", "info")
+        bubaToast("danger", "danger")
     </script>
 </body>
 </html>
