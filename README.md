@@ -4,6 +4,8 @@
 import Toast from "buba-toast";
 import "buba-toast/dist/main.css";
 
-const toast = new Toast();
-toast.success("message");
+Toast(
+  "message",  // message
+  "success"   // toast type 'success' | 'info' | 'warn' | 'danger'
+)
 ```
