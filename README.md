@@ -1,7 +1,9 @@
 # buba-toast
 
 ```js
-const toast = new Toast();
+import Toast from "buba-toast";
+import "buba-toast/dist/main.css";
 
-toast.success();
+const toast = new Toast();
+toast.success("message");
 ```
