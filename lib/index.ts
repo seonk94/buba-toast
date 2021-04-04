@@ -1,4 +1,4 @@
-import './toast.scss';
+import './index.scss';
 type ToastType = "success" | "warn" | "info" | "danger";
 const toast = (message: string, type : ToastType = "success") => {
   
