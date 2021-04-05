@@ -1,20 +1,21 @@
-import './index.scss';
+import "./index.scss";
 type ToastType = "success" | "warn" | "info" | "danger";
-const toast = (message: string, type : ToastType = "success") => {
-  
-  function initContainer () {
-    const toastContainer = document.getElementById('toast-container');
-    if (!toastContainer) {
-      const body = document.getElementsByTagName('body')[0];
 
-      const container = document.createElement('div');
-      container.id = 'toast-container';
+function initContainer () {
+  const toastContainer = document.getElementById('toast-container');
+  if (!toastContainer) {
+    const body = document.getElementsByTagName('body')[0];
 
-      body.appendChild(container);
-      return container;
-    }
-    return toastContainer;
+    const container = document.createElement('div');
+    container.id = 'toast-container';
+
+    body.appendChild(container);
+    return container;
   }
+  return toastContainer;
+}
+
+const toast = (message: string, type : ToastType = "success") => {
 
   function createRow () {
     const notificationElement = document.createElement('div');
