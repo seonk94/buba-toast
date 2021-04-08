@@ -1,2 +1,0 @@
-#toast-container{position:fixed;z-index:999;top:24px;bottom:auto;right:24px;left:auto;min-width:200px}#toast-container #notification{padding:16px;margin-bottom:8px;border-radius:6px;display:flex;align-items:center;background:#e5e5e5;color:#fff}#toast-container #notification.success{background-color:#68b8c8}#toast-container #notification.info{background-color:#7ac29a}#toast-container #notification.warn{background-color:#f3bb45}#toast-container #notification.danger{background-color:#cc2127}
-/*# sourceMappingURL=index.modern.css.map */
