@@ -1,13 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-  mode: 'none',
-  entry: ['@babel/polyfill', './lib/index.ts'],
+const developmentConfig = {
+  mode: 'development',
+  entry: ['@babel/polyfill', './src/index.ts'],
   output: {
-    filename: 'toast.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/public',
   },
   resolve: {
     extensions: ['.ts', '.js']
@@ -19,14 +19,39 @@ module.exports = {
       { test: /\.(ts|js)$/, use: 'babel-loader', exclude: /node_modules/, }
     ]
   },
-  devServer: {
-    port: 8080,
-    contentBase: path.join(__dirname, 'dist'),
-    publicPath: '/dist/',
-  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './dist/index.html'
+      template: 'src/index.html',
+      inject: false
     })
   ]
 };
+
+const productionConfig = {
+  mode: 'production',
+  entry: ['@babel/polyfill', './lib/index.ts'],
+  output: {
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist',
+  },
+  resolve: {
+    extensions: ['.ts', '.js']
+  },
+  module: {
+    rules: [
+      { test: /\.(sa|sc|c)ss$/i, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      // { test: /\.ts$/, use: 'ts-loader', include: [path.resolve(__dirname, 'lib')] }
+      { test: /\.(ts|js)$/, use: 'babel-loader', exclude: /node_modules/, }
+    ]
+  },
+};
+
+module.exports = (env, argv) => {
+  if (argv.mode === "development") {
+    return developmentConfig;
+  }
+  if (argv.mode === "production") {
+    return productionConfig;
+  }
+}
