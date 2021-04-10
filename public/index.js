@@ -38,7 +38,7 @@ eval("\n\n__webpack_require__(/*! core-js/es6 */ \"./node_modules/core-js/es6/in
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./lib/index.scss\");\n\n\nfunction initContainer() {\n  var toastContainer = document.getElementById('toast-container');\n\n  if (!toastContainer) {\n    var body = document.getElementsByTagName('body')[0];\n    var container = document.createElement('div');\n    container.id = 'toast-container';\n    body.appendChild(container);\n    return container;\n  }\n\n  return toastContainer;\n}\n\nvar toast = function toast(message) {\n  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : \"success\";\n\n  function createRow() {\n    var notificationElement = document.createElement('div');\n    notificationElement.id = 'notification';\n    return notificationElement;\n  }\n\n  function showElement(element) {\n    element.style.opacity = '0';\n    var opacity = 0.05;\n    var animation = setInterval(function () {\n      opacity += 0.05;\n      element.style.opacity = String(opacity);\n\n      if (opacity >= 1) {\n        element.style.opacity = '1';\n        clearInterval(animation);\n      }\n    }, 10);\n    setTimeout(function () {\n      hideElement(element);\n    }, 3000);\n  }\n\n  function hideElement(element) {\n    var opactiy = 1;\n    var animation = setInterval(function () {\n      opactiy -= 0.05;\n      element.style.opacity = String(opactiy);\n\n      if (opactiy <= 0) {\n        element.remove();\n        clearInterval(animation);\n      }\n    }, 10);\n  }\n\n  function stackElement(message, type) {\n    var rowElement = createRow();\n    var containerElement = initContainer();\n    containerElement.append(rowElement);\n    rowElement.innerHTML = \"\".concat(message);\n    rowElement.classList.add(type);\n    showElement(rowElement);\n    return rowElement;\n  }\n\n  return stackElement(message, type);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toast);\n\n//# sourceURL=webpack://buba-toast/./lib/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./lib/index.scss\");\n\n\nvar success = __webpack_require__(/*! ../assets/success.svg */ \"./assets/success.svg\");\n\nvar warn = __webpack_require__(/*! ../assets/warn.svg */ \"./assets/warn.svg\");\n\nvar info = __webpack_require__(/*! ../assets/info.svg */ \"./assets/info.svg\");\n\nvar danger = __webpack_require__(/*! ../assets/danger.svg */ \"./assets/danger.svg\");\n\nfunction initContainer() {\n  var toastContainer = document.getElementById('toast-container');\n\n  if (!toastContainer) {\n    var body = document.getElementsByTagName('body')[0];\n    var container = document.createElement('div');\n    container.id = 'toast-container';\n    body.appendChild(container);\n    return container;\n  }\n\n  return toastContainer;\n}\n\nvar toast = function toast(message) {\n  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : \"success\";\n  var option = arguments.length > 2 ? arguments[2] : undefined;\n\n  function createRow() {\n    var notificationElement = document.createElement('div');\n    notificationElement.id = 'notification';\n    return notificationElement;\n  }\n\n  function showElement(element) {\n    element.style.opacity = '0';\n    var opacity = 0.05;\n    var animation = setInterval(function () {\n      opacity += 0.05;\n      element.style.opacity = String(opacity);\n\n      if (opacity >= 1) {\n        element.style.opacity = '1';\n        clearInterval(animation);\n      }\n    }, 10);\n    setTimeout(function () {\n      hideElement(element);\n    }, 3000);\n  }\n\n  function hideElement(element) {\n    var opactiy = 1;\n    var animation = setInterval(function () {\n      opactiy -= 0.05;\n      element.style.opacity = String(opactiy);\n\n      if (opactiy <= 0) {\n        element.remove();\n        clearInterval(animation);\n      }\n    }, 10);\n  }\n\n  var rowElement = createRow();\n  var containerElement = initContainer();\n  containerElement.append(rowElement);\n  rowElement.innerHTML = \"\".concat(message);\n  rowElement.classList.add(type);\n\n  if (option !== null && option !== void 0 && option.icon) {\n    var iconElement = document.createElement(\"div\");\n    iconElement.classList.add(\"toast-icon\");\n    rowElement.prepend(iconElement);\n  }\n\n  showElement(rowElement);\n  return rowElement;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toast);\n\n//# sourceURL=webpack://buba-toast/./lib/index.ts?");
 
 /***/ }),
 
@@ -49,7 +49,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _lib_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/index */ \"./lib/index.ts\");\n\n\nvar buttons = document.getElementsByClassName(\"toast-button\");\nArray.from(buttons).forEach(function (button) {\n  button.addEventListener(\"click\", function () {\n    (0,_lib_index__WEBPACK_IMPORTED_MODULE_1__.default)(button.innerHTML, button.name);\n  });\n});\n\n//# sourceURL=webpack://buba-toast/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _lib_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/index */ \"./lib/index.ts\");\n\n\nvar defaultButtons = document.getElementsByClassName(\"default-toast\");\nArray.from(defaultButtons).forEach(function (button) {\n  button.addEventListener(\"click\", function () {\n    (0,_lib_index__WEBPACK_IMPORTED_MODULE_1__.default)(button.innerHTML, button.name);\n  });\n});\nvar iconButtons = document.getElementsByClassName(\"icon-toast\");\nArray.from(iconButtons).forEach(function (button) {\n  button.addEventListener(\"click\", function () {\n    var toastType = button.name;\n    (0,_lib_index__WEBPACK_IMPORTED_MODULE_1__.default)(button.innerHTML, toastType, {\n      icon: toastType\n    });\n  });\n});\n\n//# sourceURL=webpack://buba-toast/./src/index.ts?");
 
 /***/ }),
 
@@ -3188,7 +3188,7 @@ eval("__webpack_require__(/*! ../modules/web.timers */ \"./node_modules/core-js/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"#toast-container {\\n  position: fixed;\\n  z-index: 999;\\n  top: 24px;\\n  bottom: auto;\\n  right: 24px;\\n  left: auto;\\n  min-width: 200px; }\\n  #toast-container #notification {\\n    padding: 16px;\\n    margin-bottom: 8px;\\n    border-radius: 6px;\\n    display: flex;\\n    align-items: center;\\n    background: #e5e5e5;\\n    color: #fff; }\\n    #toast-container #notification.success {\\n      background-color: #68B8C8; }\\n    #toast-container #notification.info {\\n      background-color: #7AC29A; }\\n    #toast-container #notification.warn {\\n      background-color: #F3BB45; }\\n    #toast-container #notification.danger {\\n      background-color: #CC2127; }\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://buba-toast/./lib/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _assets_success_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/success.svg */ \"./assets/success.svg\");\n/* harmony import */ var _assets_info_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/info.svg */ \"./assets/info.svg\");\n/* harmony import */ var _assets_warn_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/warn.svg */ \"./assets/warn.svg\");\n/* harmony import */ var _assets_danger_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/danger.svg */ \"./assets/danger.svg\");\n// Imports\n\n\n\n\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_success_svg__WEBPACK_IMPORTED_MODULE_2__.default);\nvar ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_info_svg__WEBPACK_IMPORTED_MODULE_3__.default);\nvar ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_warn_svg__WEBPACK_IMPORTED_MODULE_4__.default);\nvar ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_danger_svg__WEBPACK_IMPORTED_MODULE_5__.default);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"#toast-container {\\n  position: fixed;\\n  z-index: 999;\\n  top: 24px;\\n  bottom: auto;\\n  right: 24px;\\n  left: auto;\\n  min-width: 200px; }\\n  #toast-container #notification {\\n    padding: 16px;\\n    margin-bottom: 8px;\\n    border-radius: 6px;\\n    display: flex;\\n    align-items: center;\\n    background: #e5e5e5;\\n    color: #fff; }\\n    #toast-container #notification.success {\\n      background-color: #68B8C8; }\\n      #toast-container #notification.success .toast-icon {\\n        background-image: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \"); }\\n    #toast-container #notification.info {\\n      background-color: #7AC29A; }\\n      #toast-container #notification.info .toast-icon {\\n        background-image: url(\" + ___CSS_LOADER_URL_REPLACEMENT_1___ + \"); }\\n    #toast-container #notification.warn {\\n      background-color: #F3BB45; }\\n      #toast-container #notification.warn .toast-icon {\\n        background-image: url(\" + ___CSS_LOADER_URL_REPLACEMENT_2___ + \"); }\\n    #toast-container #notification.danger {\\n      background-color: #CC2127; }\\n      #toast-container #notification.danger .toast-icon {\\n        background-image: url(\" + ___CSS_LOADER_URL_REPLACEMENT_3___ + \"); }\\n    #toast-container #notification .toast-icon {\\n      width: 16px;\\n      height: 16px;\\n      margin-right: 4px;\\n      background-repeat: round; }\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://buba-toast/./lib/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -3211,6 +3211,61 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (cssWithMappingToString) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join(\"\");\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery, dedupe) {\n    if (typeof modules === \"string\") {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, \"\"]];\n    }\n\n    var alreadyImportedModules = {};\n\n    if (dedupe) {\n      for (var i = 0; i < this.length; i++) {\n        // eslint-disable-next-line prefer-destructuring\n        var id = this[i][0];\n\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = [].concat(modules[_i]);\n\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        // eslint-disable-next-line no-continue\n        continue;\n      }\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\n//# sourceURL=webpack://buba-toast/./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // eslint-disable-next-line no-param-reassign\n    options = {};\n  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n\n\n  url = url && url.__esModule ? url.default : url;\n\n  if (typeof url !== \"string\") {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    // eslint-disable-next-line no-param-reassign\n    url = url.slice(1, -1);\n  }\n\n  if (options.hash) {\n    // eslint-disable-next-line no-param-reassign\n    url += options.hash;\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, \"\\\\n\"), \"\\\"\");\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack://buba-toast/./node_modules/css-loader/dist/runtime/getUrl.js?");
+
+/***/ }),
+
+/***/ "./assets/danger.svg":
+/*!***************************!*\
+  !*** ./assets/danger.svg ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"85b255d31980b2d6475fb6000326efba.svg\");\n\n//# sourceURL=webpack://buba-toast/./assets/danger.svg?");
+
+/***/ }),
+
+/***/ "./assets/info.svg":
+/*!*************************!*\
+  !*** ./assets/info.svg ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"2743092dfaf783da1dc8467df17bb6bb.svg\");\n\n//# sourceURL=webpack://buba-toast/./assets/info.svg?");
+
+/***/ }),
+
+/***/ "./assets/success.svg":
+/*!****************************!*\
+  !*** ./assets/success.svg ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"97ea5c3d3c63a25d5cea55633b414b7f.svg\");\n\n//# sourceURL=webpack://buba-toast/./assets/success.svg?");
+
+/***/ }),
+
+/***/ "./assets/warn.svg":
+/*!*************************!*\
+  !*** ./assets/warn.svg ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"813081cb2980cbd8617e8ccff8f2e2a7.svg\");\n\n//# sourceURL=webpack://buba-toast/./assets/warn.svg?");
 
 /***/ }),
 
@@ -3322,6 +3377,11 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/public";
 /******/ 	})();
 /******/ 	
 /************************************************************************/

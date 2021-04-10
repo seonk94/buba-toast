@@ -1,5 +1,8 @@
 import "./index.scss";
 export type ToastType = "success" | "warn" | "info" | "danger";
+interface Option {
+  icon: "success" | "warn" | "info" | "danger"
+}
 
 function initContainer () {
   const toastContainer = document.getElementById('toast-container');
@@ -15,7 +18,7 @@ function initContainer () {
   return toastContainer;
 }
 
-const toast = (message: string, type : ToastType = "success") => {
+const toast = (message: string, type : ToastType = "success", option?: Option) => {
 
   function createRow () {
     const notificationElement = document.createElement('div');
@@ -55,18 +58,21 @@ const toast = (message: string, type : ToastType = "success") => {
     }, 10);
   }
 
-  function stackElement (message: string, type: ToastType) {
-    const rowElement = createRow();
-    const containerElement = initContainer();
-    containerElement.append(rowElement);
-    rowElement.innerHTML = `${message}`;
-    rowElement.classList.add(type);
+  const rowElement = createRow();
+  const containerElement = initContainer();
+  containerElement.append(rowElement);
+  rowElement.innerHTML = `${message}`;
+  rowElement.classList.add(type);
 
-    showElement(rowElement);
-    return rowElement;
+  if (option?.icon) {
+    const iconElement = document.createElement("div");
+    iconElement.classList.add("toast-icon");
+    rowElement.prepend(iconElement);
   }
 
-  return stackElement(message, type);
+  showElement(rowElement);
+
+  return rowElement;
 };
 
 export default toast;

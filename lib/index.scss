@@ -18,15 +18,34 @@
         color: #fff;
         &.success {
             background-color: #68B8C8;
+            .toast-icon {
+                background-image: url(../assets/success.svg);
+            }
         }
         &.info {
             background-color: #7AC29A;
+            .toast-icon {
+                background-image: url(../assets/info.svg);
+            }
         }
         &.warn {
             background-color: #F3BB45;
+            .toast-icon {
+                background-image: url(../assets/warn.svg);
+            }
         }
         &.danger {
             background-color: #CC2127;
+            .toast-icon {
+                background-image: url(../assets/danger.svg);
+            }
+        }
+
+        .toast-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            background-repeat: round;
         }
     }
 

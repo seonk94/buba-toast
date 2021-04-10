@@ -16,7 +16,8 @@ const developmentConfig = {
     rules: [
       { test: /\.(sa|sc|c)ss$/i, use: ['style-loader', 'css-loader', 'sass-loader'] },
       // { test: /\.ts$/, use: 'ts-loader', include: [path.resolve(__dirname, 'lib')] }
-      { test: /\.(ts|js)$/, use: 'babel-loader', exclude: /node_modules/, }
+      { test: /\.(ts|js)$/, use: 'babel-loader', exclude: /node_modules/, },
+      { test: /\.(svg|png)$/, loader: 'file-loader' },
     ]
   },
   plugins: [
@@ -42,7 +43,8 @@ const productionConfig = {
     rules: [
       { test: /\.(sa|sc|c)ss$/i, use: ['style-loader', 'css-loader', 'sass-loader'] },
       // { test: /\.ts$/, use: 'ts-loader', include: [path.resolve(__dirname, 'lib')] }
-      { test: /\.(ts|js)$/, use: 'babel-loader', exclude: /node_modules/, }
+      { test: /\.(ts|js)$/, use: 'babel-loader', exclude: /node_modules/, },
+      { test: /\.(svg|png)$/, loader: 'file-loader' },
     ]
   },
 };
