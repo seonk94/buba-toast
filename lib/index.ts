@@ -1,5 +1,5 @@
 import "./index.scss";
-type ToastType = "success" | "warn" | "info" | "danger";
+export type ToastType = "success" | "warn" | "info" | "danger";
 
 function initContainer () {
   const toastContainer = document.getElementById('toast-container');

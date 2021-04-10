@@ -1,6 +1,12 @@
-alert("성공!!")
+import "./index.css";
+import toast, { ToastType } from "../lib/index";
 
-import toast from "../lib/index";
+const buttons  = document.getElementsByClassName("toast-button") ;
 
-toast("success", "success")
-console.log(toast);
+
+Array.from(buttons).forEach((button) => {
+  button.addEventListener("click", () => {
+    toast(button.innerHTML, (button as HTMLButtonElement).name as ToastType)
+  })
+})
+
