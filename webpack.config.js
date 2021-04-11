@@ -8,6 +8,9 @@ const developmentConfig = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'public'),
     publicPath: '/public',
+    library: "toast",
+    libraryTarget: "umd",
+    umdNamedDefine: true
   },
   resolve: {
     extensions: ['.ts', '.js']
@@ -22,7 +25,7 @@ const developmentConfig = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: 'public/index.html',
       inject: false
     })
   ]
@@ -35,6 +38,9 @@ const productionConfig = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
+    library: "toast",
+    libraryTarget: "umd",
+    umdNamedDefine: true
   },
   resolve: {
     extensions: ['.ts', '.js']
