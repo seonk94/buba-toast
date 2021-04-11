@@ -16,28 +16,32 @@
         align-items: center;
         background: #e5e5e5;
         color: #fff;
+
+        animation-duration: 0.5s;
+        animation-name: slidein;
+
         &.success {
             background-color: #68B8C8;
             .toast-icon {
-                background-image: url(../assets/success.svg);
+                background-image: url(../assets/success_white.svg);
             }
         }
         &.info {
             background-color: #7AC29A;
             .toast-icon {
-                background-image: url(../assets/info.svg);
+                background-image: url(../assets/info_white.svg);
             }
         }
         &.warn {
             background-color: #F3BB45;
             .toast-icon {
-                background-image: url(../assets/warn.svg);
+                background-image: url(../assets/warn_white.svg);
             }
         }
         &.danger {
             background-color: #CC2127;
             .toast-icon {
-                background-image: url(../assets/danger.svg);
+                background-image: url(../assets/danger_white.svg);
             }
         }
 
@@ -49,4 +53,15 @@
         }
     }
 
+}
+
+@keyframes slidein {
+    0% {
+        opacity: 0;
+        margin-left: 100%;
+    }
+    100% {
+        opacity: 1;
+        margin-left: 0%;
+    }
 }

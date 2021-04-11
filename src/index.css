@@ -1,3 +1,8 @@
+body {
+  padding: 24px;
+  margin: 0px;
+}
+
 .container {
   display: flex;
   padding: 16px;
@@ -5,6 +10,7 @@
   border-radius: 4px;
   border: 1px solid #e6e6e6;
   min-width: 350px;
+  margin-bottom:24px;
 }
 
 .title-row {
