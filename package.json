@@ -1,6 +1,6 @@
 {
   "name": "buba-toast",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "simple toast",
   "type": "module",
   "source": "lib/index.ts",
