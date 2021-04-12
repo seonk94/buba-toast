@@ -31,6 +31,14 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+      
+      - name: setup git
+      - run: |
+          git config user.email "seonk94@naver.com"
+          git config user.name "buba"
+
+      - name: publish
+      - run: npm version patch
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
