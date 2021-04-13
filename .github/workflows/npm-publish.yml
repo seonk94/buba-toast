@@ -23,7 +23,6 @@ jobs:
       - run: npm run build:prod
       - run: npm run build:dev
 
-    stpes:
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
