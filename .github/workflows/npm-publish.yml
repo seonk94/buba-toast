@@ -21,18 +21,9 @@ jobs:
           node-version: 12
       - run: npm install
       - run: npm run build:prod
-
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 12
       - run: npm run build:dev
       - run: npm run deploy
+
 
   publish-npm:
     needs: build
