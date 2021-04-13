@@ -15,14 +15,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: install
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 12
       - run: npm install
+
+      - name: build
       - run: npm run build:prod
       - run: npm run build:dev
-      - run: npm run deploy
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
 
 
   publish-npm:
